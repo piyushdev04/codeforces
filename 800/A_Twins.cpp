@@ -8,28 +8,28 @@ int main() {
 	int n;
 	cin >> n;
 
-	vector<int> coins(n);
+	vector<int> a(n);
 	int total = 0;
 
 	for (int i = 0; i < n; i++) {
-		cin >> coins[i];
-		total += coins[i];
+		cin >> a[i];
+		total += a[i];
 	}
 
 	// sort in descending order
-	sort(coins.begin(), coins.end(), greater<int>());
+	sort(a.begin(), a.end(), greater<int>());
 
 	int my_sum = 0;
-	int count = 0;
+	int cnt = 0;
 
-	for (int coin : coins) {
+	for (int coin : a) {
 		my_sum += coin;
-		count++;
+		cnt++;
 		if (my_sum > total - my_sum) {
 			break;
 		}
 	}
 
-	cout << count << "\n";
+	cout << cnt << "\n";
 	return 0;
 }
